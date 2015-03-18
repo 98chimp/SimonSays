@@ -29,7 +29,8 @@
 @property (assign, nonatomic) bool isRunning;
 
 
--(instancetype)initWithColours:(NSArray *)colors simonSays:(NSMutableArray *)simonSays playerDoes:(NSMutableArray *)playerDoes isRunning:(bool)isRunning;
+-(instancetype)initWithColours:(NSArray *)colors;
+
 -(NSMutableArray *)addRandomColorToSimonSays;
 
 // model inputs

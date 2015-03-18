@@ -16,6 +16,7 @@
 @property (assign, nonatomic) float startAlpha;
 @property (assign, nonatomic) float endAlpha;
 @property (assign, nonatomic) float animationDuration;
+@property (assign, nonatomic) bool animationEnded;
 
 @property (strong, nonatomic) IBOutlet UIButton *redButton;
 @property (strong, nonatomic) IBOutlet UIButton *greenButton;

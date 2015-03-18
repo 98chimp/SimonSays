@@ -10,11 +10,11 @@
 
 @implementation SimonSays
 
--(instancetype)initWithColours:(NSArray *)colours simonSays:(NSMutableArray *)simonSays playerDoes:(NSMutableArray *)playerDoes isRunning:(bool)isRunning{
+-(instancetype)initWithColours:(NSArray *)colours {
     self = [super init];
     
     if (self) {
-        self.colors = @[@"R", @"G", @"B", @"O"];
+        self.colors = colours;
         self.simonSays = [NSMutableArray new];
         self.playerDoes = [NSMutableArray new];
         self.isRunning = YES;
@@ -33,17 +33,18 @@
 #pragma mark - Inputs
 
 -(void)startGame {
-    [self initWithColours:self.colors simonSays:self.simonSays playerDoes:self.playerDoes isRunning:YES];
+    //[self initWithColours:self.colors simonSays:self.simonSays playerDoes:self.playerDoes isRunning:YES];
     [self addRandomColorToSimonSays];
     [self.delegate animateSequence:self.simonSays];
 }
 
 -(void)inputColor:(NSString *)colorString {
-    while (self.isRunning) {
+//while (self.isRunning) {
         if ([self.simonSays[self.playerDoes.count] isEqualToString:colorString]) {
             [self.playerDoes addObject:colorString];
             if (self.simonSays.count == self.playerDoes.count) {
                 [self.delegate animateWin];
+                [self addRandomColorToSimonSays];
                 [self.playerDoes removeAllObjects];
             }
         }
@@ -51,11 +52,13 @@
             self.isRunning = NO;
             [self.delegate animateLose];
         }
-    }
+//    }
 }
 
 -(void)resetGame {
     self.isRunning = YES;
+    [self.playerDoes removeAllObjects];
+    [self.simonSays removeAllObjects];
     [self startGame];
 }
 

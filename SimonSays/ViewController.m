@@ -18,9 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.gameModel = [SimonSays new];
+    self.gameModel = [[SimonSays alloc] initWithColours:@[@"R", @"G", @"B", @"O"]];
     self.gameModel.delegate = self;
     self.resetButton.hidden = YES;
+    self.animationEnded = NO;
     self.startAlpha = 0.5;
     self.endAlpha = 1.0;
     self.animationDuration = 0.2;
@@ -101,6 +102,7 @@
             [self animateOrangeButton];
         }
     }
+    self.animationEnded = YES;
 }
 
 -(void)animateLose {
@@ -121,23 +123,53 @@
         }
     }
     self.resetButton.hidden = false;
+    return;
 }
 
--(void)animateWin {
-    for (int counter = 0; counter < self.gameModel.simonSays.count; counter++) {
-        if ([self.gameModel.simonSays[counter] isEqualToString:@"R"]) {
+-(void)animateArray:(NSArray *)remaining {
+    
+    if (remaining.count < 1) {
+        return;
+    }
+    
+    [UIView animateWithDuration:self.animationDuration delay:5.0 options:0 animations:^{
+        
+        NSString *colorString = remaining.firstObject;
+        
+        if ([colorString isEqualToString:@"R"]) {
             [self animateRedButton];
         }
-        else if ([self.gameModel.simonSays[counter] isEqualToString:@"G"]) {
+        else if ([colorString isEqualToString:@"G"]) {
             [self animateGreenButton];
         }
-        else if ([self.gameModel.simonSays[counter] isEqualToString:@"B"]) {
+        else if ([colorString isEqualToString:@"B"]) {
             [self animateBlueButton];
         }
         else {
             [self animateOrangeButton];
         }
-    }
+    } completion:^(BOOL finished) {
+        
+        if (remaining.count > 0) {
+            NSMutableArray *newRemaining = [remaining mutableCopy];
+            [newRemaining removeObjectAtIndex:0];
+            
+            [self animateArray:newRemaining];
+        }
+        
+    }];
+
+}
+
+-(void)animateWin {
+    
+    //_block int counter = 0;
+    
+    [self animateArray:self.gameModel.simonSays];
+    
+    
+
+//    return;
 }
 
 @end
