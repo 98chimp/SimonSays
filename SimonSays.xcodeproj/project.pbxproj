@@ -14,6 +14,7 @@
 		EBB632BF1AB8DEF3003704B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB632BE1AB8DEF3003704B7 /* Images.xcassets */; };
 		EBB632C21AB8DEF3003704B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB632C01AB8DEF3003704B7 /* LaunchScreen.xib */; };
 		EBB632CE1AB8DEF3003704B7 /* SimonSaysTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB632CD1AB8DEF3003704B7 /* SimonSaysTests.m */; };
+		EBB632D91AB8DF19003704B7 /* SimonSays.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB632D81AB8DF19003704B7 /* SimonSays.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		EBB632C71AB8DEF3003704B7 /* SimonSaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimonSaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB632CC1AB8DEF3003704B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EBB632CD1AB8DEF3003704B7 /* SimonSaysTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimonSaysTests.m; sourceTree = "<group>"; };
+		EBB632D71AB8DF19003704B7 /* SimonSays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimonSays.h; sourceTree = "<group>"; };
+		EBB632D81AB8DF19003704B7 /* SimonSays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimonSays.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				EBB632B61AB8DEF3003704B7 /* AppDelegate.m */,
 				EBB632B81AB8DEF3003704B7 /* ViewController.h */,
 				EBB632B91AB8DEF3003704B7 /* ViewController.m */,
+				EBB632D71AB8DF19003704B7 /* SimonSays.h */,
+				EBB632D81AB8DF19003704B7 /* SimonSays.m */,
 				EBB632BB1AB8DEF3003704B7 /* Main.storyboard */,
 				EBB632BE1AB8DEF3003704B7 /* Images.xcassets */,
 				EBB632C01AB8DEF3003704B7 /* LaunchScreen.xib */,
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBB632D91AB8DF19003704B7 /* SimonSays.m in Sources */,
 				EBB632BA1AB8DEF3003704B7 /* ViewController.m in Sources */,
 				EBB632B71AB8DEF3003704B7 /* AppDelegate.m in Sources */,
 				EBB632B41AB8DEF3003704B7 /* main.m in Sources */,
